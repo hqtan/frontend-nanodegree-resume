@@ -1,0 +1,21 @@
+Lesson 0:
+
+javascript console commands
+> console.log("hello world")
+"hello world"   ##returns undefined
+
+> document.URL
+  - returns a "string" value of document url.
+
+
+Instructor notes/links:
+https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Introduction
+https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model
+https://docs.webplatform.org/wiki/css
+
+
+Lesson 1:
+
+javascript console commands:
+> "audacity".slice(1).replace("u","U");
+"Udacity"
