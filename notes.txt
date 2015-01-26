@@ -1,4 +1,4 @@
-Lesson 0:
+[[[ Lesson 0: ]]]
 
 javascript console commands
 > console.log("hello world")
@@ -8,14 +8,97 @@ javascript console commands
   - returns a "string" value of document url.
 
 
-Instructor notes/links:
+[[ Instructor notes/links: ]]
 https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Introduction
 https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model
 https://docs.webplatform.org/wiki/css
 
 
-Lesson 1:
+[[[ Lesson 1: ]]]
 
 javascript console commands:
 > "audacity".slice(1).replace("u","U");
 "Udacity"
+
+## creating an array
+> var myArray = ["hello", 1];
+
+[[ Instructor notes/links: ]]
+
+see here for more String methods:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+
+[Falsy values]
+There are only six falsy values in JavaScript so it is easiest to memorize those:
+
+    false
+    0 (zero)
+    "" (empty string)
+    null
+    undefined
+    NaN
+
+You can learn more about some of the quirks of truthy and falsy here:
+http://www.sitepoint.com/javascript-truthy-falsy/
+
+[Arrays]
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+[Copying Arrays]
+be careful when assigning an object (e.g. another array) to a var.
+Any modifications (e.g push/pop operations) you do will also modify other var!
+E.g:
+> xs ##Array [ "hello", 5 ];
+undefined
+> ys = xs;
+Array [ "hello", 5 ]
+> ys.push(ys.pop() + 1);
+2
+> ys
+Array [ "hello", 6 ]
+> xs ## xs ALSO MODIFIED!!
+Array [ "hello", 6 ]
+
+To do a proper deep copy of xs, use slice():
+> ys = xs.slice()
+Array [ "hello", 6 ]
+> ys
+Array [ "hello", 6 ]
+> ys.push(ys.pop() + 1);
+2
+> ys
+Array [ "hello", 7 ]
+> xs
+Array [ "hello", 6 ]
+
+
+[Strings]
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
+
+
+[Javascript has no Classes]
+Though JavaScript has no classes, you can mimic many of the characteristics with
+its functions. You'll learn more about functions in Lesson 3 so consider this a
+bit of a preview.
+
+function Car() {}
+/*
+var Car = function() {}
+*/
+var car1 = new Car();
+
+The new keyword allows us to create a new instance of an Object. Remember that
+functions are objects. In the code above, you can think of the function Car as a
+JavaScript version of a Python class definition.
+
+
+[ Dot and Bracket Notation ]
+http://www.dev-archive.net/articles/js-dot-notation/
+
+
+[ function definition ]
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function
+
+
+[ Validating JSON ]
+http://jsonlint.com/
