@@ -102,3 +102,47 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 
 [ Validating JSON ]
 http://jsonlint.com/
+
+
+[ Changing background color of html element ]
+document.getElementById("education").style.backgroundColor = "black";
+
+
+[ hiding an element ]
+document.getElementById("education").style.display = "none";
+
+for more info about HTMLELements, see:
+https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement.style
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Properties_Reference
+
+
+[ Sanitizing (Escaping special characters) text input using encodeURI() or
+encodeURIComponent() ]
+e.g.
+var html = '<script src="http://hackyourwebsite.com/eviljavascript.js"></script>';
+encodeURI(html);
+> "%3Cscript%20src=%22http://hackyourwebsite.com/eviljavascript.js%22%3E%3C/script%3E"
+
+see:
+http://www.w3schools.com/jsref/jsref_encodeuri.asp
+http://www.the-art-of-web.com/javascript/escape/
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent
+
+
+to convert special characters to html entities, do something like this:
+var d = "<div>"
+d = d.replace(/<|>/g, function(chr){
+    return chr == "<" ? "&lt;" : "&gt;"
+})
+console.log(d)
+
+use regexp in replace()
+see:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
+
+in jquery, you can covert to html entities with this:
+$('<div/>').text('This is fun & stuff').html();
+// evaluates to "This is fun &amp; stuff"
+
+see :
+https://stackoverflow.com/questions/2613582/convert-tags-to-html-entities
