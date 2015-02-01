@@ -24,22 +24,35 @@ bio = {
     "mobile": "13 11 66",
     "email": "hqtan@bla.id.au",
     "github": "hqtan",
+    "twitter": "hqtan",
     "location": "Earth"
   },
-  "bioPic": "https://avatars1.githubusercontent.com/u/583231?v=3&s=460",
-  "welcomeMsg": "Aloha",
+  "biopic": "https://avatars1.githubusercontent.com/u/583231?v=3&s=460",
+  "welcomeMesaage": "Aloha",
   "skills": ["babysitting", "computery stuff", "dishwashing"]
 };
 
 $("#header").append(HTMLemail.replace("%data%", bio.contacts["email"]));
-$("#header").append(HTMLbioPic.replace("%data%", bio["bioPic"]));
+$("#header").append(HTMLbioPic.replace("%data%", bio["biopic"]));
 
-var work = {};
-
-work.employer = "Captain Barnacle";
-work.position = formattedRole;
-work.years = "2 years";
-work.city = "Uluru";
+var work = {
+  "jobs": [
+    {
+      "employer": "disney",
+      "title": "wit maker",
+      "location": "disneyland",
+      "dates": "2000-2003",
+      "desciption": "I came up with witty remearks" 
+    },
+    {
+      "employer": "nasa",
+      "title": "ufo searcher",
+      "location": "Pasadena",
+      "dates": "2004-present",
+      "desciption": "searched for ufos"
+    }
+  ]
+};
 
 var education = {};
 
@@ -48,8 +61,11 @@ education["years"] = "7";
 education["city"] = "Uluru";
 
 
-$("#workExperience").append(HTMLworkStart);
-$("#workExperience").append(HTMLworkTitle.replace("%data%", work.position));
+if (bio.skills.length > 0) {
+  $("#header").append(HTMLskillsStart);
+  $("#skills").append(HTMLskills.replace("%data%", bio.skills));
+}
+//$("#workExperience").append(HTMLworkTitle.replace("%data%", work.jobs));
 
 $("#education").append(HTMLschoolStart);
 $("#education").append(HTMLschoolName.replace("%data%", education["name"]));
