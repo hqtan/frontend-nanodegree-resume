@@ -42,17 +42,35 @@ var work = {
       "title": "wit maker",
       "location": "disneyland",
       "dates": "2000-2003",
-      "desciption": "I came up with witty remearks" 
+      "description": "I came up with witty remearks" 
     },
     {
       "employer": "nasa",
       "title": "ufo searcher",
       "location": "Pasadena",
       "dates": "2004-present",
-      "desciption": "searched for ufos"
+      "description": "searched for ufos"
     }
   ]
 };
+
+work.jobs.map(function x(j){
+  $("#workExperience").append(HTMLworkStart);
+  var formattedEmployerTitle = HTMLworkEmployer.replace("%data%", j.employer) +
+                                HTMLworkTitle.replace("%data%", j.title);
+  var formattedDatesLocation = HTMLworkDates.replace("%data%", j.dates) +
+                                HTMLworkLocation.replace("%data%", j["location"]);
+  $(".work-entry:last").append(formattedEmployerTitle);
+  $(".work-entry:last").append(formattedDatesLocation);
+  $(".work-entry:last").append(HTMLworkDescription.replace("%data%", j.description));
+  $("#workExperience").append(HTMLworkStart);
+});
+
+/*
+var HTMLworkDates = '<div class="date-text">%data%</div>';
+var HTMLworkLocation = '<div class="location-text">%data%</div>';
+var HTMLworkDescription = '<p><br>%data%</p>';
+ */
 
 var education = {};
 

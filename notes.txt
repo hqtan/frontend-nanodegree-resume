@@ -146,3 +146,19 @@ $('<div/>').text('This is fun & stuff').html();
 
 see :
 https://stackoverflow.com/questions/2613582/convert-tags-to-html-entities
+
+
+[ :last jquery selector ]
+
+The :last jQuery selector returns the final element in a list that matches whatever precedes it.
+
+So for work-entry:last, if there are 3 work-entry elements, it will only return the 3rd one.
+
+If you're interested, you can read more about jQuery's :last selector here:
+http://www.w3schools.com/jquery/sel_last.asp
+
+
+[ javascript Scopes ]
+http://toddmotto.com/everything-you-wanted-to-know-about-javascript-scope/
+
+ 
