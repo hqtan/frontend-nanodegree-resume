@@ -161,4 +161,15 @@ http://www.w3schools.com/jquery/sel_last.asp
 [ javascript Scopes ]
 http://toddmotto.com/everything-you-wanted-to-know-about-javascript-scope/
 
+
+[ Collecting Click Locations ]
+
+$(document).click(function(loc){ logClicks(loc.pageX, loc.pageY) });
+
+see http://api.jquery.com/category/events/event-object/
  
+[ Return array of job locations from work object ]
+
+work.jobs.map(function(j){ return j.location; });
+> Array [ "disneyland", "Pasadena" ]
+
