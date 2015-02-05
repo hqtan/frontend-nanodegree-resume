@@ -173,3 +173,11 @@ see http://api.jquery.com/category/events/event-object/
 work.jobs.map(function(j){ return j.location; });
 > Array [ "disneyland", "Pasadena" ]
 
+//above expression is equivalent to:
+
+var locationArray = [];
+for (job in work_obj.jobs) {
+  var newLocation - work_obj.jobs[job].location;
+  locationArray.push(newLocation);
+}
+
