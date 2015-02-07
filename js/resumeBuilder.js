@@ -92,4 +92,43 @@ function inName(n) {
   return firstName + " " + lastName;
 }
 
+var projects = {
+  "projects": [
+    {
+      "title": "find a ufo",
+      "dates": "2010 - ongoing",
+      "description": "searching for ufos",
+      "images": ["https://upload.wikimedia.org/wikipedia/en/d/d5/Marvin_the_Martian.svg"]
+    },  
+    {
+      "title": "make a robot",
+      "dates": "2013 - ongoing",
+      "description": "make a robot for mavin",
+      "images": [
+                  "https://upload.wikimedia.org/wikipedia/en/3/39/R2-D2_Droid.png",
+                  "http://vignette1.wikia.nocookie.net/space-dandy/images/8/8f/QT.png/revision/latest?cb=20140210061941" 
+                ]
+    }  
+  ],
+  "display": function(){
+    document.getElementById('projects').style.backgroundColor = 'white';
+    this.projects.map(function(p){
+      $("#projects").append(HTMLprojectStart);
+      $(".project-entry").append(HTMLprojectTitle.replace("%data%", p.title));
+      //$(".project-entry").append(HTMLprojectDates.replace("%data%", p.dates));
+      //$(".project-entry").append(HTMLprojectDescription.replace("%data%", p.description));
+      //$(".project-entry").append(HTMLprojectImage.replace("%data%", p.images[0]));
+    });
+  }
+};
+
+projects.display();
+
+/*
+var HTMLprojectStart = '<div class="project-entry"></div>';
+var HTMLprojectTitle = '<a href="#">%data%</a>';
+var HTMLprojectDates = '<div class="date-text">%data%</div>';
+var HTMLprojectDescription = '<p><br>%data%</p>';
+var HTMLprojectImage = '<img src="%data%">';
+*/
 
