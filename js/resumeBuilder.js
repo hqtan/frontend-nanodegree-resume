@@ -113,22 +113,19 @@ var projects = {
   "display": function(){
     document.getElementById('projects').style.backgroundColor = 'white';
     this.projects.map(function(p){
+      //console.log("this is: " + p.title);
       $("#projects").append(HTMLprojectStart);
-      $(".project-entry").append(HTMLprojectTitle.replace("%data%", p.title));
-      //$(".project-entry").append(HTMLprojectDates.replace("%data%", p.dates));
-      //$(".project-entry").append(HTMLprojectDescription.replace("%data%", p.description));
-      //$(".project-entry").append(HTMLprojectImage.replace("%data%", p.images[0]));
+      $(".project-entry:last").append(HTMLprojectTitle.replace("%data%", p.title));
+      $(".project-entry:last").append(HTMLprojectDates.replace("%data%", p.dates));
+      $(".project-entry:last").append(HTMLprojectDescription.replace("%data%", p.description));
+      p.images.map(function(i){
+        $(".project-entry:last").append(HTMLprojectImage.replace("%data%", i));
+      });
     });
   }
 };
 
 projects.display();
 
-/*
-var HTMLprojectStart = '<div class="project-entry"></div>';
-var HTMLprojectTitle = '<a href="#">%data%</a>';
-var HTMLprojectDates = '<div class="date-text">%data%</div>';
-var HTMLprojectDescription = '<p><br>%data%</p>';
-var HTMLprojectImage = '<img src="%data%">';
-*/
+$("#mapDiv").append(googleMap);
 

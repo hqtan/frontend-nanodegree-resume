@@ -181,3 +181,23 @@ for (job in work_obj.jobs) {
   locationArray.push(newLocation);
 }
 
+
+[ Customize the Portfolio - adding googlemaps to resume ]
+
+//append googlemap to resume
+$("#mapDiv").append(googleMap);
+
+##Instructor Notes
+Important! There are two more steps required to make the map work properly.
+
+    Uncomment the last block of code in helper.js. The code you need starts with window.addEventListener('load', initializeMap); and goes until the end of the file.
+    Uncomment the <script> tag for Google Maps API in the <head> of index.html.
+
+The reason these instructions weren't included in the video is that we didn't realize until late that these lines produce errors if you don't .append() a map to the page.
+##
+
+## Links in Instructor notes:
+https://developers.google.com/maps/documentation/javascript/tutorial
+http://d3js.org/
+https://www.w3.org/community/webed/wiki/A_Short_History_of_JavaScript
+
