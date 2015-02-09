@@ -194,6 +194,10 @@ Important! There are two more steps required to make the map work properly.
     Uncomment the <script> tag for Google Maps API in the <head> of index.html.
 
 The reason these instructions weren't included in the video is that we didn't realize until late that these lines produce errors if you don't .append() a map to the page.
+
+see:
+https://developers.google.com/maps/documentation/javascript/infowindows
+https://developers.google.com/maps/documentation/javascript/reference#InfoWindow
 ##
 
 ## Links in Instructor notes:
