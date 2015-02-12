@@ -14,10 +14,10 @@ var moonWalkers = [
 ];
 
 function lastNameFirst(name){
-  return name.split(' ').reverse().join(', ')
+  return name.split(' ').reverse().join(', ');
 }
 
 function alphabetizer(_names) {
-  return _names.map(lastNameFirst).sort()
+  return _names.map(lastNameFirst).sort();
 }
 
