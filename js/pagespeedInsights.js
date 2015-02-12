@@ -100,9 +100,24 @@ var psiResults = {
 
 
 function totalBytes(psiResults){
+  var pageStatProps = Object.getOwnPropertyNames(psiResults.pageStats);
+  //returns [ "numberResources", "numberHosts", "totalRequestBytes", "numberStaticResources", "htmlResponseBytes", "cssResponseBytes", "imageResponseBytes", "javascriptResponseBytes", "otherResponseBytes", "numberJsResources", "numberCssResources" ]
 
+  var responseProps = pageStatProps.filter(function(x){return x.search(/.*bytes.*/i) >= 0;});
+  //returns [ "totalRequestBytes", "htmlResponseBytes", "cssResponseBytes", "imageResponseBytes", "javascriptResponseBytes", "otherResponseBytes" ]
+
+  var responseSizes = responseProps.map(function(a){ return Number(psiResults.pageStats[a]); });
+  //returns [ 2761, 91981, 37728, 13909, 247214, 8804 ]
+
+  var total = responseSizes.reduce(function(prev, curr, i, xs){ return prev + curr; });
+
+  return total;
 }
 
 function ruleList(psiResults){
-
+  var ruleResultProps = Object.getOwnPropertyNames(psiResults.formattedResults.ruleResults);
+  //returns [ "AvoidBadRequests", "MinifyJavaScript", "SpriteImages" ]
+  
+  return ruleResultProps.map(function(x){ return psiResults.formattedResults.ruleResults[x].localizedRuleName; });
 }
+
